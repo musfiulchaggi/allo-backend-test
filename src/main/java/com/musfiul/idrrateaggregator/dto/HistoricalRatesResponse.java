@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.util.Map;
@@ -13,6 +14,7 @@ import java.util.Map;
 @Setter
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ToString
 public class HistoricalRatesResponse extends BaseResponse<Map<String, Map<String, BigDecimal>>> {
 
     @JsonProperty("start_date")
