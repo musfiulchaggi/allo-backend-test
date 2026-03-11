@@ -3,6 +3,7 @@ package com.musfiul.idrrateaggregator.runner;
 import com.musfiul.idrrateaggregator.constant.ResourceType;
 import com.musfiul.idrrateaggregator.service.FetchResolver;
 import com.musfiul.idrrateaggregator.service.FinanceDataStoreService;
+import com.musfiul.idrrateaggregator.service.IDRDataFetcher;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
@@ -22,12 +23,20 @@ public class FinanceStartupRunner implements ApplicationRunner {
 
         log.info("FinanceStartupRunner");
         for (ResourceType type : ResourceType.values()) {
-            log.info("Fetching type : {}", type);
-            Object data = resolver
-                    .resolve(type)
-                    .fetchData();
-            log.info("Fetched data : {}", data);
-            store.put(type, data);
+            try {
+                log.info("Fetching type : {}", type);
+                IDRDataFetcher fetcher = resolver.resolve(type);
+
+                if (fetcher == null) {
+                    log.warn("No fetcher found for type {}", type);
+                    continue;
+                }
+                Object data = fetcher.fetchData();
+                store.put(type, data);
+                log.info("Fetched data : {}", data);
+            } catch (Exception e) {
+                log.error("Failed to fetch data for type {}", type, e);
+            }
         }
         log.info("FinanceStartupRunner end");
     }
