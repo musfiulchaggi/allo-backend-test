@@ -1,5 +1,6 @@
 package com.musfiul.idrrateaggregator.constant;
 
+import com.musfiul.idrrateaggregator.exception.BadRequestException;
 import lombok.Getter;
 
 @Getter
@@ -10,6 +11,10 @@ public enum ResourceType {
     SUPPORTED_CURRENCIES;
 
     public static ResourceType from(String value) {
-        return ResourceType.valueOf(value.toUpperCase());
+        try {
+            return ResourceType.valueOf(value.trim().toUpperCase());
+        } catch (Exception ex) {
+            throw new BadRequestException("Invalid resource type: " + value);
+        }
     }
 }
