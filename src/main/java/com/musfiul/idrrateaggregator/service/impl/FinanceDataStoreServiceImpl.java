@@ -1,7 +1,9 @@
 package com.musfiul.idrrateaggregator.service.impl;
 
 import com.musfiul.idrrateaggregator.constant.ResourceType;
+import com.musfiul.idrrateaggregator.dto.api.APIResponseDTO;
 import com.musfiul.idrrateaggregator.service.FinanceDataStoreService;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -17,7 +19,8 @@ public class FinanceDataStoreServiceImpl implements FinanceDataStoreService {
     }
 
     @Override
-    public Object get(ResourceType type) {
-        return store.get(type);
+    public APIResponseDTO get(ResourceType type) {
+        Object object = store.get(type);
+        return new APIResponseDTO(true, null, object, HttpStatus.OK);
     }
 }

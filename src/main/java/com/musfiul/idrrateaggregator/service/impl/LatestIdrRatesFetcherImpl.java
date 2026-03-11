@@ -5,6 +5,7 @@ import com.musfiul.idrrateaggregator.constant.ResourceType;
 import com.musfiul.idrrateaggregator.dto.LatestRatesResponse;
 import com.musfiul.idrrateaggregator.service.IDRDataFetcher;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Map;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class LatestIdrRatesFetcherImpl implements IDRDataFetcher {
@@ -47,11 +49,13 @@ public class LatestIdrRatesFetcherImpl implements IDRDataFetcher {
         int sum = username.toLowerCase()
                 .chars()
                 .sum();
-        int mod = sum % 1000;
+        BigDecimal mod = BigDecimal.valueOf(sum)
+                .remainder(BigDecimal.valueOf(1000L));
 
-        BigDecimal spreadFactor = BigDecimal.valueOf(mod)
-                .divide(BigDecimal.valueOf(100000));
+        BigDecimal spreadFactor = mod
+                .divide(BigDecimal.valueOf(100000L));
 
+        log.info("username : {}, spreadFactor : {}", username, spreadFactor.toPlainString());
         return BigDecimal.ONE
                 .divide(rateUsd, 10, RoundingMode.HALF_UP)
                 .multiply(BigDecimal.ONE.add(spreadFactor));
