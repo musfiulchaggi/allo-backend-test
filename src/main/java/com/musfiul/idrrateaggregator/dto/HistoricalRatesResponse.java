@@ -2,10 +2,7 @@ package com.musfiul.idrrateaggregator.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.Map;
@@ -13,6 +10,8 @@ import java.util.Map;
 @Getter
 @Setter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 @ToString
 public class HistoricalRatesResponse extends BaseResponse<Map<String, Map<String, BigDecimal>>> {
