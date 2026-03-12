@@ -1,8 +1,8 @@
-package com.musfiul.idrrateaggregator.service.impl;
+package com.musfiul.idrrateaggregator.service.data.impl;
 
 import com.musfiul.idrrateaggregator.constant.ResourceType;
 import com.musfiul.idrrateaggregator.dto.api.APIResponseDTO;
-import com.musfiul.idrrateaggregator.service.FinanceDataStoreService;
+import com.musfiul.idrrateaggregator.service.data.FinanceDataStoreService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 

@@ -1,15 +1,15 @@
-package com.musfiul.idrrateaggregator.service.impl;
+package com.musfiul.idrrateaggregator.service.fetcher.impl;
 
 import com.musfiul.idrrateaggregator.client.FrankfurterClient;
 import com.musfiul.idrrateaggregator.constant.ResourceType;
 import com.musfiul.idrrateaggregator.dto.CurrenciesResponse;
-import com.musfiul.idrrateaggregator.service.IDRDataFetcher;
+import com.musfiul.idrrateaggregator.service.fetcher.IDRDataFetcher;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CurrenciesFetcher implements IDRDataFetcher {
+public class CurrenciesFetcherImpl implements IDRDataFetcher {
     private static final String SUPPORTED_CURRENCIES = "supported_currencies";
     private final FrankfurterClient client;
 

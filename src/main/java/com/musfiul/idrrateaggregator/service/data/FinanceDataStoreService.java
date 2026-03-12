@@ -1,4 +1,4 @@
-package com.musfiul.idrrateaggregator.service;
+package com.musfiul.idrrateaggregator.service.data;
 
 import com.musfiul.idrrateaggregator.constant.ResourceType;
 import com.musfiul.idrrateaggregator.dto.api.APIResponseDTO;

@@ -1,7 +1,7 @@
 package com.musfiul.idrrateaggregator.controller;
 
 import com.musfiul.idrrateaggregator.constant.ResourceType;
-import com.musfiul.idrrateaggregator.service.FinanceDataStoreService;
+import com.musfiul.idrrateaggregator.service.data.FinanceDataStoreService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
