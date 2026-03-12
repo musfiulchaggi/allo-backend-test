@@ -2,6 +2,7 @@ package com.musfiul.idrrateaggregator.service.impl;
 
 import com.musfiul.idrrateaggregator.client.FrankfurterClient;
 import com.musfiul.idrrateaggregator.dto.HistoricalRatesResponse;
+import com.musfiul.idrrateaggregator.service.fetcher.impl.HistoricalIdrUsdFetcherImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -12,13 +13,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class HistoricalIdrUsdFetcherTest {
+class HistoricalIdrUsdFetcherImplTest {
 
     @Mock
     private FrankfurterClient client;
 
     @InjectMocks
-    private HistoricalIdrUsdFetcher fetcher;
+    private HistoricalIdrUsdFetcherImpl fetcher;
 
     @Test
     void shouldReturnCorrectResourceType() {

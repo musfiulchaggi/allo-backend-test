@@ -1,9 +1,9 @@
-package com.musfiul.idrrateaggregator.service.impl;
+package com.musfiul.idrrateaggregator.service.fetcher.impl;
 
 import com.musfiul.idrrateaggregator.client.FrankfurterClient;
 import com.musfiul.idrrateaggregator.constant.ResourceType;
 import com.musfiul.idrrateaggregator.dto.LatestRatesResponse;
-import com.musfiul.idrrateaggregator.service.IDRDataFetcher;
+import com.musfiul.idrrateaggregator.service.fetcher.IDRDataFetcher;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

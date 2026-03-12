@@ -1,15 +1,15 @@
-package com.musfiul.idrrateaggregator.service.impl;
+package com.musfiul.idrrateaggregator.service.fetcher.impl;
 
 import com.musfiul.idrrateaggregator.client.FrankfurterClient;
 import com.musfiul.idrrateaggregator.constant.ResourceType;
 import com.musfiul.idrrateaggregator.dto.HistoricalRatesResponse;
-import com.musfiul.idrrateaggregator.service.IDRDataFetcher;
+import com.musfiul.idrrateaggregator.service.fetcher.IDRDataFetcher;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class HistoricalIdrUsdFetcher implements IDRDataFetcher {
+public class HistoricalIdrUsdFetcherImpl implements IDRDataFetcher {
     private static final String HISTORICAL_IDR_USD = "historical_idr_usd";
     private final FrankfurterClient client;
     @Override

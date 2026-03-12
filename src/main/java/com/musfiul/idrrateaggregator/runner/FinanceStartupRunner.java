@@ -1,9 +1,9 @@
 package com.musfiul.idrrateaggregator.runner;
 
 import com.musfiul.idrrateaggregator.constant.ResourceType;
-import com.musfiul.idrrateaggregator.service.FetchResolver;
-import com.musfiul.idrrateaggregator.service.FinanceDataStoreService;
-import com.musfiul.idrrateaggregator.service.IDRDataFetcher;
+import com.musfiul.idrrateaggregator.service.resolver.FetchResolver;
+import com.musfiul.idrrateaggregator.service.data.FinanceDataStoreService;
+import com.musfiul.idrrateaggregator.service.fetcher.IDRDataFetcher;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;

@@ -1,4 +1,4 @@
-package com.musfiul.idrrateaggregator.service;
+package com.musfiul.idrrateaggregator.service.fetcher;
 
 import com.musfiul.idrrateaggregator.constant.ResourceType;
 

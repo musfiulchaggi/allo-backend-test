@@ -2,6 +2,7 @@ package com.musfiul.idrrateaggregator.service.impl;
 
 import com.musfiul.idrrateaggregator.client.FrankfurterClient;
 import com.musfiul.idrrateaggregator.dto.LatestRatesResponse;
+import com.musfiul.idrrateaggregator.service.fetcher.impl.LatestIdrRatesFetcherImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

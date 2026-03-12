@@ -1,8 +1,8 @@
-package com.musfiul.idrrateaggregator.service.impl;
+package com.musfiul.idrrateaggregator.service.resolver.impl;
 
 import com.musfiul.idrrateaggregator.constant.ResourceType;
-import com.musfiul.idrrateaggregator.service.FetchResolver;
-import com.musfiul.idrrateaggregator.service.IDRDataFetcher;
+import com.musfiul.idrrateaggregator.service.fetcher.IDRDataFetcher;
+import com.musfiul.idrrateaggregator.service.resolver.FetchResolver;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
